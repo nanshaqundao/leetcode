@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java -version:*)",
+      "Bash(mkdir:*)",
+      "Bash(mvn:*)",
+      "Bash(javac:*)",
+      "Bash(java leetcode.p0001.Solution:*)"
+    ]
+  }
+}
