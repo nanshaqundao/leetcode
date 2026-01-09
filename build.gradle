@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'me.champeau.jmh' version '0.7.2'
+}
+
+group = 'com.leetcode'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+    jmh {
+        java {
+            srcDirs = ['src/jmh/java']
+        }
+        compileClasspath += sourceSets.main.runtimeClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+dependencies {
+    // JMH dependencies (managed by plugin)
+    jmh 'org.openjdk.jmh:jmh-core:1.37'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+}
+
+jmh {
+    fork = 1
+    warmupIterations = 2
+    iterations = 3
+    timeUnit = 'ms'
+
+    // Profilers for memory analysis
+    // profilers = ['gc']  // Uncomment to enable GC profiling
+
+    // JMH version
+    jmhVersion = '1.37'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
