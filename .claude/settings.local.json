@@ -5,7 +5,15 @@
       "Bash(mkdir:*)",
       "Bash(mvn:*)",
       "Bash(javac:*)",
-      "Bash(java leetcode.p0001.Solution:*)"
+      "Bash(java leetcode.p0001.Solution:*)",
+      "Bash(gradle wrapper:*)",
+      "Bash(curl:*)",
+      "Bash(./gradlew.bat:*)",
+      "Bash(java:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Gradle build system with JMH benchmarking support\n\n- Set up Gradle 8.5 wrapper for Java 21 compatibility\n- Add JMH plugin for performance benchmarking\n- Create Claude skills: /setup-problem, /run-problem, /benchmark\n- Implement Problem 206 \\(Reverse Linked List\\) with benchmark\n- Update project structure to support organized problem folders\n- Update README with comprehensive usage instructions\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(test:*)"
     ]
   }
 }
